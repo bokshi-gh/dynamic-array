@@ -1,95 +1,41 @@
-#pragma once
+#ifndef DYNAMIC_ARRAY_H
+#define DYNAMIC_ARRAY_H
 
-template <typename T>
+#include <stddef.h> // for size_t
 
-class dynamic_array{
-private:
-	T* array;
-	int size;
-	int capacity;
+// DynamicArray struct
+typedef struct {
+    int *data;       // pointer to elements
+    size_t size;     // current number of elements
+    size_t capacity; // allocated capacity
+} DynamicArray;
 
-public:
-	dynamic_array(){
-		this->size = 0;
-		capacity = 3;
-		array = new T[capacity];
-	}
+// 1. Initializer (stack or pre-allocated object)
+void dynamic_array_init(DynamicArray *arr, size_t initial_capacity);
 
-	dynamic_array(int size){
-		this->size = size;
-		capacity = size+3;
-		array = new T[capacity];
+// 2. Constructor (heap allocation + init)
+DynamicArray* dynamic_array_create(size_t initial_capacity);
 
-		for(int i=0; i<size; i++){
-			// generic default initialization
-			*(array+i) = T{};
-		}
-	}
+// 3. Append element at end
+void dynamic_array_append(DynamicArray *arr, int value);
 
-	dynamic_array(int size, T value){
-		this->size = size;
-		capacity = size+3;
-		array = new T[capacity];
+// 4. Pop element from end
+int dynamic_array_pop(DynamicArray *arr);
 
-		for(int i=0; i<size; i++) *(array+i) = value;
-	}
+// 5. Remove element at index
+void dynamic_array_remove(DynamicArray *arr, size_t index);
 
-	~dynamic_array(){
-		delete[] array;
-	}
+// 6. Get / Set element
+int dynamic_array_get(const DynamicArray *arr, size_t index);
+void dynamic_array_set(DynamicArray *arr, size_t index, int value);
 
-	int get_size(){
-		return size;
-	}
+// 7. Print array (debug)
+void dynamic_array_print(const DynamicArray *arr);
 
-	int get_capacity(){
-		return capacity;
-	}
+// 8. Clear all elements
+void dynamic_array_clear(DynamicArray *arr);
 
-	T at(int idx){
-		return array[idx];
-	}
+// 9. Destructor (free internal memory)
+void dynamic_array_free(DynamicArray *arr);
 
-	bool empty(){
-		return size == 0 ? true: false;
-	}
-
-	T *begin(){
-		return array;
-	}
-
-	T *end(){
-		return  array + size;
-	}
-
-
-	T front(){
-		return array[0];
-	}
-
-	T back(){
-		return array[size-1];
-	}
-
-	void clear(){
-		size = 0;
-		delete[] array;
-		array = new T[capacity];
-	}
-	
-	void push_back(T value){
-		if (size > capacity){
-			capacity *= 2;
-			T new_array = new T[capacity];
-
-			for(int i=0; i<size; i++) *(new_array+i) = (array+i);
-
-			new_array[size++] = value;
-			array = new_array;
-
-			return;
-		}
-
-		array[size++] = value;
-	}
-};
+#endif // DYNAMIC_ARRAY_H
