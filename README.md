@@ -6,6 +6,6 @@ A [dynamic array](https://en.wikipedia.org/wiki/Dynamic_array) implementation in
 
 Check the following files:
 
-- `include/dynamic_array.h` - struct and function definition
-- `src/dynamic_array.c` - function implementation
-- `src/main.c` - example code demonstrating how to use the `DynamicArray` struct
+- `include/dynamic_array.h` - Struct defination and function declarations.
+- `src/dynamic_array.c` - Function implementations
+- `src/main.c` - Example code demonstrating how to use the `DynamicArray` struct.
