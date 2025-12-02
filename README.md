@@ -1,6 +1,6 @@
 # Dynamic Array
 
-A [dynamic array](https://en.wikipedia.org/wiki/Dynamic_array) implementation in C.
+A [Dynamic Array](https://en.wikipedia.org/wiki/Dynamic_array) implementation in C.
 
 ## Getting Started
 
