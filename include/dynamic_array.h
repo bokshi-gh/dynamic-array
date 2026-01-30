@@ -28,4 +28,4 @@ void dynamic_array_clear(DynamicArray *arr);
 
 void dynamic_array_free(DynamicArray *arr);
 
-#endif
+#endif // DYNAMIC_ARRAY_H
