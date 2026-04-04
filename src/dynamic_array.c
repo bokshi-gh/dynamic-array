@@ -1,14 +1,4 @@
 #include "dynamic_array.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-void dynamic_array_init(DynamicArray *arr, size_t initial_capacity) {
-    if (!arr) return;
-    arr->size = 0;
-    arr->capacity = initial_capacity > 0 ? initial_capacity : 4;
-    arr->data = malloc(arr->capacity * sizeof(int));
-}
 
 DynamicArray* dynamic_array_create(size_t initial_capacity) {
     DynamicArray *arr = malloc(sizeof(DynamicArray));
