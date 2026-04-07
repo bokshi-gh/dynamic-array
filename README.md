@@ -8,4 +8,4 @@ Check the following files:
 
 - `include/dynamic_array.h` - Struct defination and function declarations.
 - `src/dynamic_array.c` - Function implementations
-- `src/dynamic_array_demo.c` - Example code demonstrating how to use the data structure.
+- [`examples/dynamic_array_demo.c`](examples/dynamic_array_demo.c) - Example code demonstrating how to use the data structure.
