@@ -1,6 +1,6 @@
 # Dynamic Array
 
-A [Dynamic Array](https://en.wikipedia.org/wiki/Dynamic_array) implementation in C.
+An implementation of a [dynamic array](https://en.wikipedia.org/wiki/Dynamic_array) ADT in C.
 
 ## Getting Started
 
@@ -8,4 +8,4 @@ Check the following files:
 
 - `include/dynamic_array.h` - Struct defination and function declarations.
 - `src/dynamic_array.c` - Function implementations
-- `src/main.c` - Example code demonstrating how to use the `DynamicArray` struct.
+- `src/dynamic_arrar_demo.c` - Example code demonstrating how to use the data structure.
