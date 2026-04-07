@@ -1,9 +1,6 @@
 #ifndef DYNAMIC_ARRAY_H
 #define DYNAMIC_ARRAY_H
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include <stddef.h>
 
 typedef struct {
@@ -12,19 +9,14 @@ typedef struct {
     size_t capacity;
 } DynamicArray;
 
-DynamicArray* dynamic_array_create(size_t initial_capacity);
+void dynamic_array_init(DynamicArray *arr);
+void dynamic_array_deinit(DynamicArray *arr);
 
-void dynamic_array_append(DynamicArray *arr, int value);
+void dynamic_array_push_back(DynamicArray *arr, int value);
+void dynamic_array_pop_back(DynamicArray *arr);
 
-int dynamic_array_pop(DynamicArray *arr);
+int dynamic_array_at(DynamicArray *arr, size_t index);
+int dynamic_array_front(DynamicArray *arr);
+int dynamic_array_back(DynamicArray *arr);
 
-void dynamic_array_remove(DynamicArray *arr, size_t index);
-
-int dynamic_array_get(const DynamicArray *arr, size_t index);
-void dynamic_array_set(DynamicArray *arr, size_t index, int value);
-
-void dynamic_array_print(const DynamicArray *arr);
-
-void dynamic_array_destroy(DynamicArray *arr);
-
-#endif // DYNAMIC_ARRAY_H
+#endif
